@@ -1,0 +1,60 @@
+Doug Pham
+
+===== DAYTIME =====
+Q1:
+Frame  Time    Source      Destination     Protocol  Length  Info
+1  	0.000000000	192.168.133.128	129.6.15.29	  TCP	      74	 58830 → 13 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM TSval=2040104826 TSecr=0 WS=128
+2  	0.056282353	129.6.15.29	192.168.133.128	  TCP      	60	 13 → 58830 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+3  	0.056372010	192.168.133.128	129.6.15.29	  TCP	      54	 58830 → 13 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+4  	0.110193209	129.6.15.29	192.168.133.128	  DAYTIME 	105	 DAYTIME Response
+5  	0.110472731	192.168.133.128	129.6.15.29	  TCP	      54	 58830 → 13 [FIN, ACK] Seq=1 Ack=53 Win=64188 Len=0
+6  	0.111131601	129.6.15.29	192.168.133.128	  TCP	      60	 13 → 58830 [ACK] Seq=53 Ack=2 Win=64239 Len=0
+
+Q2:
+The port number the client uses is 58830
+
+Q3:
+The client needs a port in order to know which server it wants to talk to
+
+Q4:
+Frame  Time    Source      Destination   Protocol  Length  Info
+4  	0.110193209	129.6.15.29	192.168.133.128	  DAYTIME 	105	 DAYTIME Response
+
+Q5:
+60202 23-09-15 03:44:44 50 0 0 471.0 UTC(NIST) * 
+Most of the contents of the frame are the day, month, year, minute, hour, second but also has the time zone which references NIST which is where we got the ip address from earlier 
+
+Q6:
+[SYN] means a synchronization packet which requests to talk to a server
+
+Q7:
+[ACK] means an acknowledgement packet means it received the request
+
+Q8:
+[FIN] means it is closing off the connection
+
+Q9:
+The daytime server initiated the closing since it just sent over the daytime response and in frame 5 we see the server send the [FIN] packet to the client
+
+===== HTTP =====
+Q1:
+Frame  Time    Source            Destination     Protocol  Length  Info
+1	   0.000000000	192.168.133.128	45.79.89.123	  TCP      	74	    56902 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM TSval=2505337845 TSecr=0 WS=128
+2	   0.000212296	192.168.133.128	45.79.89.123	  TCP	      74	    56908 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM TSval=2505337846 TSecr=0 WS=128
+3	   0.116555506	45.79.89.123	  192.168.133.128	TCP	      60	    80 → 56902 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+4	   0.116556047	45.79.89.123	  192.168.133.128	TCP      	60	    80 → 56908 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+The were two connections that were opened and we can tell because the first four frames are establishing that 3-way handshake, one of the connections was from port 56902 to port 80 and the other was from port 56908 to port 80
+
+Q2:
+Frame  Time        Source        Destination   Protocol  Length  Info
+7	    0.117146669	192.168.133.128	45.79.89.123	HTTP	    408	   GET /index.html HTTP/1.1 
+Here we see the protocol is HTTP and the info section a GET request which is asking for the html of the index page
+
+Q3:
+Frame  Time        Source        Destination   Protocol  Length  Info
+11	  3.713305988	 192.168.133.128	45.79.89.123	HTTP	  377	  GET /jeff_square_head.jpg HTTP/1.1 
+Here we see the protocol is HTTP and the info section the GET request which is asking for the photograph
+
+===== QUESTIONS =====
+I saw a [PSH] packet in the later frames of the HTTP segment, I wonder what that could mean and I saw it was with an ACK packet
+Messing around with the frame details I saw epoch time which was like a billion seconds so I wonder what kind of time stamp that represents
