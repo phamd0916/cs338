@@ -1,9 +1,0 @@
-How the code works is by using the equation A = g^a mod p and we know that g = 7, p = 61, and A = 30,
-it runs through iterations of possible a values that satisfy this equation and the first number that 
-satisfies it. It does the same for B = g^b mod p with B = 17 and the values we get from this are a = 41
-and b = 23. To check that these two values work is by using these two equations: K = B^a mod p and K = A^b mod p
-and by using the values we got, if both K's are the same then we have the key. 
-If the beginning numbers were much larger, then we would fail in the searching for which a and b values match
-because there are infinite combinations of a and b values that would work and since this code just finds the first pair
-that satisfies the equation, it would not look to the other valid pairs, so that is where is method falls short.
-
