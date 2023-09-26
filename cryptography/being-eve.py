@@ -66,10 +66,11 @@ it would take much more computing time to decode having to iterate through all p
 Once we have an x that satisfies the equations, we have to split x up into two parts which are 1 byte each so that we
 can convert it into ASCII. Using some bitwise operations we can accomplish this and then we append both of these bytes
 into our list which we then print after getting through Alice's encrypted message.
-I also decrypted this message by finding p and q which was 379 and 449 and used the equation 
-lambda(nB) = lcm(p - 1)(q - 1) and got 12096 and similarly using code found dB using the equation eB*dB mod lambda(nB) = 1.
-Once I determined what dB was then I could use the equation c^d mod n to determine the original message with a process similar
-to described above with taking the decrypted blocks and converting it to ASCII
+I also decrypted this message by finding p and q which was 379 and 449 since they are both prime and multiply to get the
+n we were given which was 170171and used the equation lambda(nB) = lcm(p - 1)(q - 1) and got 12096 and similarly using
+code found dB using the equation eB*dB mod lambda(nB) = 1. Once I determined what dB was then I could use the equation 
+c^d mod n to determine the original message with a process similar to described above with taking the decrypted blocks
+and converting it to ASCII
 """
 # ------ RSA --------
 
