@@ -1,4 +1,53 @@
 Doug Pham
 file-formats.txt
 
+-----BEGIN RSA PRIVATE KEY-----
+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
+-----END RSA PRIVATE KEY-----
 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+b51+5eazti4lbLpSkcSq45Gk1h8vVj7UN9MJMkaDX8CZN0FmbAjePYNa4WkHAekuw6GzK58j/mf2Mmyp5jrc2T68XRiR3JtzA2wxdVBiosMV6nJVcSkY/Qu507HheixY5Ol0qBaXbF/kScT5D/0Bz+uJwYdLoMu4bjncpvkxLKtFuQ5grpw3LOlzjIfmy7/Huxs4PzgYdg5A6fw7Cq4DdFvEmNzXUGxMFPktpvbgPHkBUdMp/oRqDd6++Rr31BCo3ztPXWiM7NBKfaQJl5PX84ldFRvzdDEwEbv/Pdc+cc6ljNykL9osqanWtMAqbYHlh0qPeeRDwLbq3jUwCyuC2pxr3k2KsmgtLc4v+/HBOlsFjpH3g+DSBy6CZfvtVG1qFfe8bR/u3bD+ANUrzRygZg/GEHRs4DOlK1j6vgtYxY4vdYgkalQpxcqK6cEyCIYIAfj/fsxH04fGJiJnXxeTlGJDo/yDkrRIAu9PvkU67nP6YgCnkS2FgGevXiTTbaU= phamd@mantis
+
+-----Private-----
+3. We would expect to see the following in the private key: the version, modulus, publicExponent, privateExponent, prime1 (p), prime2 (q), exponent1 (d mod (p - 1)), exponent2 (d mod (q - 1)), coefficient (q^(-1) mod p), and an optional otherPrimesInfo.
+
+4. To decode the private key, I used Michael Holtstrom's ASN.1 decoder and pasted the private key I created earlier. To format it correctly I deleted the PEM header and footer so that all that is in the input is just the base64 text.
+
+5. 
+INTEGER 0x00 (0 decimal)
+This integer corresponds to the version which has the value of 0. The bytes that represent this integer is 02 01 00 and begins at an offset of 4.
