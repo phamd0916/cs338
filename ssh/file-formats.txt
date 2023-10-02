@@ -50,4 +50,45 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+b51+5eazti4lbLpSkcSq45Gk1h8vVj7UN9MJMkaD
 
 5. 
 INTEGER 0x00 (0 decimal)
-This integer corresponds to the version which has the value of 0. The bytes that represent this integer is 02 01 00 and begins at an offset of 4.
+This integer corresponds to the version which has the value of 0. The DER encoding for this integer is 02 01 and begins at an offset of 4. For the DER encoding of this integer, we look at the first byte 02 and convert this into binary which is 00000010 and we take the first leftmost two bits which is the tag class and here it is universal. Then the next bit shows it is the primitive type. The remaining bits represent what type it is and since it equals 2, that means it is an INTEGER type. Looking at the next byte, 01, if we convert this into binary we get 00000001. We take the first leftmost bit and this represents how many octets of length it is. Since it is 0, then it is only 1 octet of length and the remaining bits show the value of the length which here it is 1 byte. The next byte which is the last byte for this integer is the value of it which is 00 or 0 in decimal.
+
+   INTEGER 0x00be6f9d7ee5e6b3b62e256cba5291c4aae391a4d61f2f563ed437d3093246835fc0993741666c08de3d835ae1690701e92ec3a1b32b9f23fe67f6326ca9e63adcd93ebc5d1891dc9b73036c31755062a2c315ea7255712918fd0bb9d3b1e17a2c58e4e974a816976c5fe449c4f90ffd01cfeb89c1874ba0cbb86e39dca6f9312cab45b90e60ae9c372ce9738c87e6cbbfc7bb1b383f3818760e40e9fc3b0aae03745bc498dcd7506c4c14f92da6f6e03c790151d329fe846a0ddebef91af7d410a8df3b4f5d688cecd04a7da4099793d7f3895d151bf374313011bbff3dd73e71cea58cdca42fda2ca9a9d6b4c02a6d81e5874a8f79e443c0b6eade35300b2b82da9c6bde4d8ab2682d2dce2ffbf1c13a5b058e91f783e0d2072e8265fbed546d6a15f7bc6d1feeddb0fe00d52bcd1ca0660fc610746ce033a52b58fabe0b58c58e2f7588246a5429c5ca8ae9c13208860801f8ff7ecc47d387c62622675f1793946243a3fc8392b44802ef4fbe453aee73fa6200a7912d858067af5e24d36da5
+
+This integer corresponds to the modulus variable which has a value as displayed in the hexadecimal above. The DER encoding for this integer is 02 82 01 81 and begins at an offset of 7 bytes. Looking at the leftmost byte, we see that it has the universal tag class with a primitive INTEGER type. Looking at the next byte the value is 82 which in binary is 10000010 and since the leftmost bit is 1 then we know the length of the sequence is 1-126 octets. Looking at the remaining bits we can determine that the length of the sequence is 2 octets long. Then looking at the next two bytes we know the exact length of the sequence is 0x181.
+
+   INTEGER 0x010001 (65537 decimal)
+
+This integer corresponds to the public exponent variable and has the value of 65537 in decimal. The DER encoding for this integer is 02 03 and begins at an offset of 396 bytes. Looking at the leftmost byte, we can tell that it has the universal tag class with a primitive INTEGER type. Looking at the next byte which has a value of 03, which in binary is 00000011 so we know that it is one octet in length and the length of the sequence is 3 bytes.
+
+   INTEGER 0x00a4aba346bdc9d6106caad3eff1c2368b86a8c41e9b6cb56932dcead182f5d2581414e8e0d68e08c513efe7c00eaf8e8972749bf87079f607e121d4cc7dc5a5949f0e4e9739cdb7337c2ab37db8f1bfb8fa7492fc36c1d945d05a395fc2eb3457f0ae50e91d081bfc0c973ceae46b5cde1a4a941e12bde4d7042ddc3edeeb90080e3a0621569ce65c17abeeccd01f54840b53d1dfbb5ae85bfd4b4889610c85185b9f96ca8ffc67809df16cde7b07f3329777faa75c22c7a16548fd5e2e61aaaf14337bce2818a1a306d7b1b5511168619e54668b0ac4e3019cabf6d2482b362f09f613f0e439d14b52e84726becac4d3fe4655694344b159ff4d23d53244e0409471936c62385d356b86b814a69ca1d15459f644be6bf9ccb4df25b084185e194e30c647edaea0516d4fc7450ffd33b27fc6c6aa384a03ed152d5e51c08328bb24f740805c12124706a39b0851d8206530702e7d733fdad7c09cbf33e98d8eb7eacda5bcf153bdcf4dcad3a15298555f9065d9c334374ee721a4ed1174269d69
+
+This integer corresponds to the private exponent variable and has the value as displayed in the hexadecimal above. The DER encoding for this integer is 02 82 01 81 which begins at an offset of 401 bytes. This is the same encoding as the modulus variable INTEGER one from earlier so we know it has the universal tag class with a primitive INTEGER type. We know the sequence is two octets long and has the exact length of 0x181.
+
+   INTEGER 0x00fb19404a797de832728c705239bc6cb9498464b2b91c04903ea78badf60cbfd5918168766405a8625d9aa22b51808c2a05ce96466a6be27e56bdb1cf762570fb5e2c7361724d16ab7e14b7f0c014f1a9c3eb1e7f392f637340c3563b0b62004fd5c2220f06581af60b2c91253fb15e41ee9468dabd94a6fb9c7aba2964fae9b8983abbc385439279528e98ede2b96b43ea9d5489400c9acb48235568ffd47cbaefcffdf55e730dd7abb72ded90e2a44afcf900e189e0c63e79652efb0c21b44b
+
+This integer corresponds to the prime1 variable (p) and its value is the hexadecimal above. The DER encoding for this integer is 02 81 C1 which begins at an offset of 790 bytes. We see the type for this variable, which is the first byte is 02, which once again means it is a universal tag class with a primitive INTEGER type. The next byte is 81 which converts to 10000001 which means that it has a length that is 1 octet long and the length of the sequence is 0xC1.
+
+   INTEGER 0x00c2273b0f22dbb3805a0fde4c50b7326aea11174925657d9a6bdfb718d3a6c2afa514c1a524104202f1b45c44613d794df53216732d6bb13b5c9c937244157058e652f83c245b0982a8cf25ef27d5f143bfb31d0a62199502d7e47d21381d18351f68835bc3773837b4d8b4e6122baeaf9e8d2dbc97039b831b9b4f454989d1ba18650a08de217a8db9b3d43943eba4d07d688cdfb0e5a60a84cdcb66582f4a0f4e2a3515239d012154aaf071e591c00259567ec284cf3e38b46e89365c1ecfcf
+
+This integer corresponds to the prime2 variable (q) and its value is the hexadecimal above. The DER encoding for this integer is 02 81 C1 which begins at an offset of 986 bytes. This encoding is the same as the prime1 variable so we know it has the universal tag class with a primitive INTEGER type. The length is 1 octet long and the length of the sequence is 0xC1.
+
+   INTEGER 0x00f74c423e56f342d95469ae41bd2d2f23391d9413552e1bec785888bfb6e18d996829bc59455f311c57b5f0db9af47096fe8b1d0392d2580a37a1b1da7230a3da5d40880e44055a3b61fc43c06f5cf139528460cfc9e13b200a7b9794a53c4ab45601518bdca2af42fd74522b0e54c0514d088b504b807908bb6f3fa37f19835053551d118e5123942b53d7980a40b53cf9772407dcb5cd4a41ecd2b48ba999827ea729261c745200c3d4affe1640b0b04dff6af7b5d4534aba428607a846158b
+
+This integer corresponds to the exponent1 (d mod (p - 1)) variable and its value is the hexadecimal above. The DER encoding for this integer is 02 81 C1 and begins at an offset of 1182 bytes. This once again is the same encoding for this variable as previously so it has the same type and length as both prime variables.
+
+   INTEGER 0x714b79402ce42d8bf1821f03437a93b625de514b42c245982de8bf2c829d66301ed1ccea33f034c5090c696711a350bcf81f0150b6a988238eb863a6232aab8384ebd7a528c5e2f7d6d0025fdb4c11dca9e9b8418ddb45c401fd7833414e6108e6ca1315222bd8a75125bff21d9a55f66f3c0cfb66d8191059b4b87e431a644306e73702d3b48f92525228be3def2d1ee87f70ed3b89d6e97e73a48495630b01816849cf8b179c4839e3022a447f579f47489cf19f945bc7b52a67714c3242ab
+
+This integer corresponds to the exponent2 (d mod (q - 1)) variable and its value is the hexadecimal above. The DER encoding for this integer is 02 81 C0 and begins at an offset of 1378 bytes. This once again is similar to the previous variable but the only difference with this variable is rather than the length of the sequence being 0xC1 it is instead 0xC0.
+
+   INTEGER 0x00cae98f1258d379995b4cf6c11459ae78faff57fc708a96ba1c99ea0543f81aac99851b8b9f7f727e45c1f14ca3008412bb6e2780be51f9df5007ff21e5d29e87e3e40747f77d88fb58b50fa5dcf6c692289cc95ddd2ea5a5ca30045e72d4eb1718a4b6ed1e2728f1534af48a2187aeb0bb6906bbf97cee8b9439c4e191a7100257cb4a78d1b6b332848202d9f07041e988e20a645dc67e92448079ba1f579de1b2c65735c4bf26331d9f25b5fd8cddbd77424cad52ffec3bd7902cc479db54af
+
+This integer corresponds to the coefficient (q^(-1) mod p) variable and its value is the hexadecimal above. The DER encoding for this integer is 02 81 C1 and begins at an offset of 1573. This encoding is the same as the previous variables but the length of this sequence is 0xC1.
+
+
+
+
+
+
+
+
+
