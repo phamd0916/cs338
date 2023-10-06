@@ -2,16 +2,12 @@ Doug Pham
 scenarios.txt
 
 1.
-Alice and Bob use Diffie-Hellman to agree on a shared secret key K and then use symmetric encryption algorithm AES(K,M) to encrypt it and AES_D(K,C) to decrypt it. This works since AITM is not possible, which is the only downfall of Diffie-Hellman, and with AES the message is encrypted so Eve cannot read it.
+Alice and Bob use Diffie-Hellman to agree on a shared secret key K and now they have established this shared secret. Then use symmetric encryption algorithm AES(K,M) to encrypt it and AES_D(K,C) to decrypt it. This works since AITM is not possible, which is the only downfall of Diffie-Hellman, and with AES the message is encrypted so Eve cannot read it.
 
 2.
 First, Alice would want to use a cryptographic hash funciton to create a hash of her message (H(M)). This makes it so Mal cannot modify the message without Bob being able to detect it since even slightly changing one character in the message would completely change H(M). Then, Alice is going to use her private key to give H(M) a digital signature and to ensure the message has not been tampered with. Finally Alice can send H(M) to Bob with the digital signature
 
 3.
-First, since we know that AITM is impossible, Alice and Bob would use Diffie-Hellman to agree on a shared secret key K
-Use Diffie-Hellman key exchange for secure key establishment.
-Generate a symmetric key for the session.
-Encrypt the contract using the symmetric key.
-Use a cryptographic hash function to create a hash of the encrypted contract.
-Sign the hash using Alice's private key to create a digital signature.
-Send the encrypted contract along with the digital signature to Bob.
+First, since we know that AITM is impossible, Alice and Bob would use Diffie-Hellman to agree on a shared secret key K_1 and now they have established this shared secret. Then similar to 1. we would again use symmetric encryption algorithm AES(K_2,M) to encrypt, where M is the contract that Alice wants to send and K_2 is the key for this symmetric encryption. Now to ensure that Bob can be confident that it is Alice who sent the message, Alice can take AES(K_2, M) and use a hash function which would look like H(AES(K_2, M)) and then Alice can use her prive key to create a digital signature to sign this hash with. This will ensure that Bob can be confident that Alice sent the message and then after all that, Alice can send bob the encrypted contract with the digital signature to Bob.
+
+4.
