@@ -16,6 +16,7 @@ Claim #2: Alice could claim that there was a compromise with her private key tha
 Claim #3: Another possibility is that Alice could say that her digital signature was forged and then made a modified contract that a signature that is valid. This would be a sophisticated attack for the attacker so the more important this contract is between Alice and Bob, the more likely a strong attacker would be able to pull this off. I would say that this is also a likely situation.
 
 5.
+The formula that Sig_CA = RSA_Sign(H("bob.com" || P_B), S_CA)
 
 6.
 No that is not enough to convince Alice she is talking to Bob. One thing that Bob can do to convince Alice that Bob has the S_B that goes with the P_B in Cert_B is that Alice and Bob can do Diffie-Hellman with challenge. So Alice and Bob will do Diffie-Hellman as normal. Then Alice sends Bob a random challenge. Bob will then sign this challenge by doing the following E(S_B, H(R || g^b mod p)) where S_B is Bob's private key, R is the random number that Alice sent Bob, and g^b mod p was sent from Bob to Alice during DH. Then Alice can verify the signature using P_B and then if the signature is valid, Alice can then know that she is communicating with Bob.
