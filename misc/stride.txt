@@ -8,27 +8,33 @@ popup and the user put their information in there, the attacker would then have 
 credentials. A corresponding mitigation for this scenario and the one below could be to require 
 two-factor authentication.
   - Closely related, website spoofing could start with phishing attacks. An attacker could 
-create in a phishing email for example, that imitates the legit Tapirs Unlimited and provide a link to a spoofed website. Corresponding mitigation again could be using two-factor 
+create in a phishing email for example, that imitates the legit Tapirs Unlimited and provide a
+link to a spoofed website. Corresponding mitigation again could be using two-factor 
 authentication
 
 Tampering:
   - Since Tapirs Unlimited will have features such as creating posts by users that get sent to 
-the web server, attackers may take advantage of this by intercepting this communication from the client to the web server and being able to edit the original post and put something 
-unwanted by the original user. Corresponding mitigation could be to use HTTPS for all the interactions.
-
+the web server, attackers may take advantage of this by intercepting this communication from
+the client to the web server and being able to edit the original post and put something 
+unwanted by the original user. Corresponding mitigation could be to use HTTPS for all the
+interactions.
   - Building off the spoofing attack, if an attacker has the login credentials of a user, they 
-then would also have to ability to delete or create posts maliciously. Corresponding mitigation could be to use two-factor authentication.
+then would also have to ability to delete or create posts maliciously. Corresponding mitigation
+could be to use two-factor authentication.
 
 
 Repudiation:
-  - An attack could make a malicious or harmful post to Tapirs Unlimited, something that does 
+  - An attacker could make a malicious or harmful post to Tapirs Unlimited, something that does 
 not follow the guidelines, and then claim that they did not make that post and says some other
 user must have made that post. A corresponding mitigation for this would be having a feature 
 that keeps track of all interactions of logged in users, between the user and web server so 
 that posts can be retraced back to the user.
 
 Information Disclosure:
-  - 
+  - An attacker could use a SQL injection within the search feature of Tapirs Unlimited that 
+would show data that the user should not have access to. Corresponding mitigation for this 
+would be to have the application code not use the input directly and remove any potential malicious code elements.
+  - I
 
 Denial of Service:
   - 
