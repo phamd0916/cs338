@@ -13,7 +13,7 @@ link to a spoofed website. Corresponding mitigation again could be using two-fac
 authentication
 
 Tampering:
-  - Since Tapirs Unlimited will have features such as creating posts by users that get sent to 
+  - Since Tapirs Unlimited will have features such as creating posts by users that get sent to
 the web server, attackers may take advantage of this by intercepting this communication from
 the client to the web server and being able to edit the original post and put something 
 unwanted by the original user. Corresponding mitigation could be to use HTTPS for all the
@@ -34,10 +34,10 @@ Information Disclosure:
   - An attacker could use a SQL injection within the search feature of Tapirs Unlimited that 
 would show data that the user should not have access to. Corresponding mitigation for this 
 would be to have the application code not use the input directly and remove any potential malicious code elements.
-  - I
+  - Using methods in the spoofing section, an attacker could get the login credentials for an admin and could have access to very sensitive information of users and the company. Corresponding mitigation for this would be two factor authentication.
 
 Denial of Service:
-  - 
+  - An attacker could use a DDoS attack which would prevent users access from the web server. The attacker would flood the open ports of the web page with requests/packets and the user would be denied access. Corresponding mitigations for this would be to limit the amount of traffic that can be sent to the web server, though you would have to be wary to not block legitimate traffic.
 
 Elevation of Privilege:
   - 
