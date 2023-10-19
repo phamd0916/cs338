@@ -1,7 +1,8 @@
-Doug Pham
+Doug Pham collaborated with Jack Huffman
 
 Spoofing:
-  - 
+  - An attacker could try to make a similar webpage that looks like our Tapirs Unlimited one that uses a very similar URL. If a user then goes to this page mistakingly, the attacker could get access to any sensitive information that user put in, for example, if there was a login popup and the user put their information in there, the attacker would then have their credentials
+  - Closely related, website spoofing could start with phishing attacks. An attacker could create in a phishing email for example, that imitates the legit Tapirs Unlimited and provide a link to a spoofed website.
 
 Tampering:
   - 
