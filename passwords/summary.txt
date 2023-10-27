@@ -6,11 +6,11 @@ user    0m0.540s
 sys     0m0.088s
 
 ========PART 2========
-Hashes Computed:  
-Passwords Cracked:  
-real    14m13.935s
-user    14m13.685s
-sys     0m0.089s
+Hashes Computed:  667641308
+Passwords Cracked:  26
+real    17m17.342s
+user    17m16.952s
+sys     0m0.086s
 
 ========PART 3========
 Hashes Computed:  539883080
