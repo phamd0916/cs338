@@ -35,3 +35,14 @@ user    13m19.990s
 sys     0m0.245s
 
 ========ANALYSIS========
+Q: Did your time per hash computed change between phases? By what factor? Why?
+
+Q: Did your time per password crack change between phases? By what factor? Why?
+
+Q: Suppose you wanted to precompute all the hashes for each possible password
+so you could just look up the password in a table indexed by the hash. How much
+memory would be required for each phase?
+
+Q: Give 3-4 reasons we should store password hashes and not the passwords themselves.
+Think in terms of threats, who the attackers might be, etc.
+
