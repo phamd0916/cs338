@@ -11,9 +11,9 @@ user    14m13.685s
 sys     0m0.089s
 
 ========PART 3========
-
-real    10m48.009s
-user    10m47.439s
-sys     0m0.372s
+Hashes Computed:  539883080
+real    13m20.454s
+user    13m19.990s
+sys     0m0.245s
 
 ========ANALYSIS========
