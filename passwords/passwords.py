@@ -6,7 +6,7 @@ import binascii
 '''
 dict = {}
 words = [line.strip().lower() for line in open('passwords.txt')]
-
+hash_counter = 0
 # Puts all possible password digests into dictionary
 for word in words:
     encoded = word.encode('utf-8')
@@ -14,7 +14,9 @@ for word in words:
     digest = hash.digest()
     digest_as_hex = binascii.hexlify(digest)
     digest_as_hex_string = digest_as_hex.decode('utf-8')
+    hash_counter += 1
     dict[digest_as_hex_string] = word
+    
 
 cracked_passwords = {}
 f1 = open("cracked1.txt", "w")
@@ -27,12 +29,15 @@ for line in open('part1.txt'):
     password = dict[hash]
     cracked_passwords[user] = password
     f1.writelines([user, ":", password, "\n"])
+print("Hashes Computed: ", hash_counter)
 
 
 '''
 ==========PART 2==========
 '''  
+hash_counter2 = 0
 user_pass = {}
+
 f2 = open("cracked2.txt", "w")
 
 # Place all passwords and usernames into hash
@@ -51,15 +56,18 @@ for word1 in words:
         digest = hash.digest() 
         digest_as_hex = binascii.hexlify(digest)
         digest_as_hex_string = digest_as_hex.decode('utf-8')
+        hash_counter2 += 1
 
         # Checks if two word password is in dictionary
         if (digest_as_hex_string in user_pass.keys()):
             f2.writelines([user_pass[digest_as_hex_string], ":", concatenate, "\n"])
-            print(user_pass[digest_as_hex_string], ":", concatenate)
+            print(user_pass[digest_as_hex_string], ":", concatenate)  
+            print("Hashes Computed: ", hash_counter2)     
 
 '''
 ==========PART 3==========
 '''
+hash_counter3 = 0
 f3 = open("cracked3.txt", "w")
 
 # Parse passwords for part 3
@@ -81,7 +89,8 @@ for line in open('part3.txt'):
         digest = hash.digest()
         digest_as_hex = binascii.hexlify(digest)
         digest_as_hex_string = digest_as_hex.decode('utf-8')
-
+        hash_counter3 += 1
         if (password == digest_as_hex_string):
             print(user, ":", word)
+            print("Hashes Computed: ", hash_counter3)
             f3.writelines([user, ":", word, "\n"])
