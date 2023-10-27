@@ -1,10 +1,19 @@
 ========PART 1=======
 
+real    0m0.633s
+user    0m0.540s
+sys     0m0.088s
 
 ========PART 2========
 
+real    14m13.935s
+user    14m13.685s
+sys     0m0.089s
 
 ========PART 3========
 
+real    10m48.009s
+user    10m47.439s
+sys     0m0.372s
 
 ========ANALYSIS========
