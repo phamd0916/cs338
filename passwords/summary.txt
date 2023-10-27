@@ -1,20 +1,35 @@
 ========PART 1=======
+Total time: user - 0.54s
 Hashes Computed:  267516
 Passwords Cracked:  2734
+Time per hash computed: 0.00000201857 seconds per hash
+Time per password cracked: 0.0001975128 seconds per password
+Passwords cracked per number of hashes computed: 0.01021994946 passwords per hash
+
 real    0m0.633s
 user    0m0.540s
 sys     0m0.088s
 
 ========PART 2========
+Total time: user - 17m16.952s = 1036.952s
 Hashes Computed:  667641308
 Passwords Cracked:  26
+Time per hash computed: 0.00000155315 seconds per hash
+Time per password cracked: 39.8827692308 seconds per password
+Passwords cracked per number of hashes computed: 0.0000000389430667 passwords per hash
+
 real    17m17.342s
 user    17m16.952s
 sys     0m0.086s
 
 ========PART 3========
+Total time: user - 13m19.990s = 799.99s
 Hashes Computed:  539883080
 Passwords Cracked:  2019
+Time per hash computed: 0.00000148178 seconds per hash
+Time per password cracked: 0.39623080733seconds per password
+Passwords cracked per number of hashes computed: 0.00000373969 passwords per hash
+
 real    13m20.454s
 user    13m19.990s
 sys     0m0.245s
