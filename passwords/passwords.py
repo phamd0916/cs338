@@ -32,9 +32,7 @@ for line in open('part1.txt'):
 '''
 ==========PART 2==========
 '''  
-dict = {}
 user_pass = {}
-words = [line.strip().lower() for line in open('passwords.txt')]
 f2 = open("cracked2.txt", "w")
 
 # Place all passwords and usernames into hash
