@@ -1,12 +1,13 @@
 ========PART 1=======
 Hashes Computed:  267516
-Passwords Cracked:  2019
+Passwords Cracked:  2734
 real    0m0.633s
 user    0m0.540s
 sys     0m0.088s
 
 ========PART 2========
-
+Hashes Computed:  
+Passwords Cracked:  
 real    14m13.935s
 user    14m13.685s
 sys     0m0.089s
