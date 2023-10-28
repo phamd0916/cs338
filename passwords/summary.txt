@@ -27,7 +27,7 @@ Total time: user - 13m19.990s = 799.99s
 Hashes Computed:  539883080
 Passwords Cracked:  2019
 Time per hash computed: 0.00000148178 seconds per hash
-Time per password cracked: 0.39623080733seconds per password
+Time per password cracked: 0.39623080733 seconds per password
 Passwords cracked per number of hashes computed: 0.00000373969 passwords per hash
 
 real    13m20.454s
@@ -36,13 +36,40 @@ sys     0m0.245s
 
 ========ANALYSIS========
 Q: Did your time per hash computed change between phases? By what factor? Why?
+The time per hash computed did not change much between part 2 and part 3 but the time per hash was
+a significant amount slower for part 1. Part 1 was slower than part 2 by about 0.00000046s and slower
+than part 3 by about 0.00000053 and this is because there were more hashes that matched with
+the passwords in part 1 since there was much less variety, so the computer had to more calculations
+from the python program.
 
 Q: Did your time per password crack change between phases? By what factor? Why?
+The time per password crack were 0.0001975128 seconds per password, 39.8827692308 seconds per password, 
+and 0.39623080733 seconds per password for part 1, part 2, and part 3 respectively. Part 1 was over 200,000
+times faster than part 2 and that is because with there being two word passwords, the combinations of passwords
+becomes 2734^2 which equals almost 7.5 million and so to find a correct password takes a lot more time. Part 3 
+was about 100 times faster because with there being the salt there still significantly more variety than part 1
+but not as much in part 2.
 
 Q: Suppose you wanted to precompute all the hashes for each possible password
 so you could just look up the password in a table indexed by the hash. How much
 memory would be required for each phase?
+Each hash string is 32 bytes long.
+Each password is 16 bytes long.
+Each mapping of a hash to a password takes up an additional 32 bytes of overhead beyond the space required to store the hash and the password.
+
+So we can say that the required amount of memory to store just one password with its hash string and the mapping of it is the sum of 
+all the above. So we get 32+16+32 which equals 80, so it is 80 bytes for one hash. In part 1 we computed 267526 hashes and multiplying this
+by 80 bytes we get that it takes 21,401,280 bytes or 21.4 MB to store all of them, which is not much which is why we able to store all the 
+hashes which I did in the python code. In part 2 we computed 667641308 hashes which equals 53,411,304,640 bytes or 53.4 GB. This is way to much
+to store which is we we cannot store all of the possible hashes and keep in mind that this is not all the hashes that need to be done it is
+only the amount of hashes I ran until I wanted to program to stop. In part 3 we computed 539883080 hashes which equals  43,190,646,400 bytes
+or 43.2 GB which once again is too much memory and this is only until I decided to stop the program.
 
 Q: Give 3-4 reasons we should store password hashes and not the passwords themselves.
 Think in terms of threats, who the attackers might be, etc.
-
+Storing the hashes gives an additional layer of security as attackers can only get their hands on the hashes password which is very
+computationally difficult to get the original password from. It also minimizes the threats of insider attacks, for example someone
+who has access to the database will not be able to know the password since it is stored in the hash so they cannot leak passwords.
+Adding the salt with each user makes it even more tedious since each salt is unique to each user so an attacker would have to compute
+the hashes for each password individually. Users also often use the same passwords for across platforms so storing the hashes ensure that
+it is a lot less likely that if one service were to get breached that it would affect other accounts that use that password.
